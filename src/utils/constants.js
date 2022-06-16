@@ -1,6 +1,6 @@
 export const API_DOMAIN = "https://api.themoviedb.org/3";
 export const API_KEY = "a61e6e15f8aa4e533051cb627eaa2dd5";
-export const REGISTRATION_HREF = "https://www.themoviedb.org/signup"
+export const REGISTRATION_HREF = "https://www.themoviedb.org/signup";
 
 export const ACTION_SEND = "SEND";
 export const ACTION_SUCCESS = "SUCCESS";
@@ -17,4 +17,10 @@ export const defaultFiltersState = {
   sorting: "popularity.desc",
   year: 2022,
   genres: [],
+};
+
+export const ROUTES = {
+  NOT_FOUND_PAGE: "*",
+  HOME_PAGE: "/",
+  FILM_PAGE: "/film",
 };

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
+import { ROUTES } from "../../utils/constants";
 
 const Header = ({ onShowModal }) => {
   const { isLoggedIn, logout, userName } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const Header = ({ onShowModal }) => {
           <Nav.Item>
             <Nav.Link
               as={Link}
-              to="/"
+              to={ROUTES.HOME_PAGE}
               variant="outline-light"
               className="user-select-none"
             >

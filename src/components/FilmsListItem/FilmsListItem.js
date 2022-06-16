@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import styles from "./FilmsListItem.module.scss";
-import * as CONSTANTS from "../../utils/constants";
+import { IMAGE_DOMAIN, ERROR_IMAGE_URL, ROUTES } from "../../utils/constants";
 import "../../utils/fontawasome";
 import { Link } from "react-router-dom";
 
@@ -18,18 +18,15 @@ const FilmsListItem = (props) => {
         {props.backdropPath && (
           <Card.Img
             variant="top"
-            src={`${CONSTANTS.IMAGE_DOMAIN}${props.backdropPath}`}
+            src={`${IMAGE_DOMAIN}${props.backdropPath}`}
             alt={props.backdropPath}
           />
         )}
         {!props.backdropPath && (
-          <Card.Img variant="top" src={CONSTANTS.ERROR_IMAGE_URL} />
+          <Card.Img variant="top" src={ERROR_IMAGE_URL} />
         )}
         <Card.Body className={styles.body}>
-          <Card.Title
-            as={Link}
-            to={`/film/${props.id}`}
-          >
+          <Card.Title as={Link} to={`${ROUTES.FILM_PAGE}/${props.id}`}>
             {props.title}
           </Card.Title>
           <Card.Text>Rating: {props.rating}</Card.Text>

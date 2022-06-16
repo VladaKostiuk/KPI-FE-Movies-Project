@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import FilmPage from "./pages/FilmPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { ROUTES } from "./utils/constants";
 
 const App = () => {
   const [modalIsShown, setModalIsShown] = useState(false);
@@ -28,9 +29,14 @@ const App = () => {
 
       <Layout onShowModal={showModalHandler}>
         <Routes>
-          <Route path="*" element={<NotFoundPage />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="film/:id" element={<FilmPage />} />
+          {/* <Route path={ROUTES.HOME_PAGE} exact element={<HomePage />} />
+          <Route path={ROUTES.FILM_PAGE + "/:id"} element={<FilmPage />} />
+          <Route path={ROUTES.NOT_FOUND_PAGE} element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} /> */}
+
+          <Route path={ROUTES.NOT_FOUND_PAGE} element={<NotFoundPage />} />
+          <Route path={ROUTES.HOME_PAGE} element={<HomePage />} />
+          <Route path={ROUTES.FILM_PAGE + "/:id"} element={<FilmPage />} />
         </Routes>
       </Layout>
     </>
