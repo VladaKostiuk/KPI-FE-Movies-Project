@@ -1,0 +1,18 @@
+.image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  max-height: 50vh;
+  width: 100%;
+
+  & * {
+    max-width: 100%;
+  }
+}
+
+.bottomContainer {
+  margin-top: 20px;
+  text-align: center;
+  user-select: none;
+}

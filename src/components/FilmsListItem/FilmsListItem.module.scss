@@ -1,0 +1,13 @@
+.card {
+  height: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & a {
+    color: #000;
+  }
+}
